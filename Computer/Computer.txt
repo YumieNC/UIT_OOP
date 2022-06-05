@@ -1,0 +1,106 @@
+Một công ty chuyên lắp ráp và kinh doanh laptop cần 1 ứng dụng cơ bản giúp họ nhập liệu và lưu trữ thông tin về sản phẩm.
+
+Thông tin cơ bản của một laptop như sau: 
+	- Mã sản phẩm
+	- Tên sản phẩm
+	- Giá bán: được tính tự động từ giá các thành phần cấu thành nên laptop
+		+ Giá CPU
+		+ Tổng giá của các thanh RAM
+		+ Giá ổ cứng
+		+ Giá màn hình
+	- 1 bộ vi xử lý CPU
+	- RAM
+	- 1 Ổ cứng
+	- 1 Màn hình
+	* Lưu ý: - Mỗi laptop có thể có 1 hoặc 2 thanh RAM
+		 - Nếu có 2 thanh RAM thì luôn cùng loại RAM và cùng dung lượng
+
+Biết rằng linh kiện để lắp nên 1 laptop sẽ là sự tổ hợp của các phần sau:
+* CPU gồm:
+	- Mã CPU
+	- Loại CPU
+	- Đơn giá
+	- Được chia làm 3 loại:
+		+ Core i3: đơn giá là 100;
+		+ Core i5: đơn giá là 200;
+		+ Core i7: đơn giá là 300;
+
+* RAM gồm:
+	- Mã RAM
+	- Loại RAM
+	- Đơn giá
+	- Dung lượng
+	- Được chia làm 2 loại:
+		+ DDR3: đơn giá là 100 / GB
+		+ DDR4: đơn giá là 200 / GB
+
+* Ổ cứng gồm:
+	- Mã ổ cứng
+	- Loại ổ cứng
+	- Đơn giá
+	- Dung lượng
+	- Được chia là 2 loại:
+		+ HDD: có thêm thông tin về số vòng quay 
+		+ SSD: có thêm thông số tốc độ đọc và tốc độ ghi
+
+* Màn hình gồm:
+	- Mã màn hình
+	- Loại màn hình
+	- Độ phân giải: có 2 loại
+		+ HD
+		+ FullHD
+	- Đơn giá 
+	- Được chia làm 2 loại:
+		+ Màn hình gương (độ phân giải: HD, đơn giá là 1000)
+		+ Màn hình chống lóa (độ phân giải: FullHD)
+	* Lưu ý: Màn hình chống lóa có thêm thông tin về tiêu chuẩn:
+		- Tiêu chuẩn 1: đơn giá là 2000;
+		- Tiêu chuẩn 2: đơn giá là 3000;
+		- Tiêu chuẩn 3: đơn giá là 4000. 
+
+* Có 3 dòng sản phẩm:
+	- Dòng Butterfly:
+		+ CPU: Core i7
+		+ Màn hình chống lóa
+		+ Ổ cứng SSD
+	- Dòng Fly:
+		+ CPU: Core i5
+		+ Màn hình gương
+	- Dòng Bee:
+		+ CPU: Core i3 hoặc Core i5
+		+ Màn hình gương
+Viết chương trình hỗ trợ một số thao tác nhập liệu với quy trình sau:
+	- Nhập và Xuất danh sách N laptop với thông tin đầy đủ (N nhập từ bàn phím)
+	- [Option] Hiển thị lại danh sách N laptop trước khi người dùng tiến hành lưu thông qua toán tử xuất “<<”
+	- [Option] Lưu danh sách sản phẩm xuống file danh_sach_san_pham.txt (nếu chưa có sẵn thì tạo file mới)
+
+
+INPUT FORMAT:
+[số lượng sản phẩm]
+[dòng sản phẩm (1 – Butterfly, 2 – Fly, 3 – Bee)]
+[mã sản phẩm]
+[tên laptop]
+<loại CPU (1 – Core i3, 2 – Core i5) (nếu laptop là dòng Bee)>
+[mã CPU]
+[số thanh RAM (1 – 1 thanh, 2 – 2 thanh)]
+[loại RAM]
+[dung lượng RAM]
+[mã RAM]
+<mã RAM (nếu có 2 thanh RAM)>
+<tiêu chuẩn va chạm (1 – TC1, 2 – TC2, 3 – TC3) (nếu là màn hình chống lóa)>
+[mã màn hình]
+<loại ổ cứng (đối với dòng Fly và Bee)>
+[mã ổ cứng]
+[dung lượng ổ cứng]
+[đơn giá]
+<số vòng quay (nếu loại là HDD)>
+<tốc độ đọc và tốc độ ghi (nếu loại là SSD)>
+
+
+OUTPUT FORMAT:
+Laptop: [mã sản phẩm] [dòng sản phẩm] [tên sản phẩm] [giá bán]
+	CPU: [mã CPU] [loại CPU] [đơn giá]
+	RAM: [mã RAM] <mã RAM (nếu có 2 thanh RAM)> [loại RAM] [dung lượng RAM] [tổng giá]
+	Màn hình: [mã màn hình] [loại màn hình] [độ phân giải] <tiêu chuẩn (đối với màn hình chống lóa)> [đơn giá]
+	Ổ cứng: [mã ổ cứng] [loại ổ cứng] [dung lượng ổ cứng] [đơn giá] <tốc độ đọc và tốc độ ghi (đối với SSD)> <số vòng quay (đối với HDD)>
+ 
