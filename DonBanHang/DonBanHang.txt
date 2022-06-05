@@ -1,0 +1,76 @@
+Một cửa hàng muốn viết một phần mềm để quản lý các đơn hàng của cửa hàng
+
+* Mỗi đơn hàng gồm:
+	- Mã đơn hàng
+	- Ngày đặt hàng
+	- Ngày giao hàng
+	- Địa chỉ giao hàng
+	- Thông tin của khách hàng
+	- Danh sách các thông tin đặt hàng
+	- Giá trị đơn hàng
+	* Mỗi thông tin đặt hàng sẽ có thông tin về sản phẩm và số lượng được đặt hàng
+	- Được chia làm 2 loại:
+		+ Đơn hàng bán lẻ (đối với là khách hàng cá nhân)
+		+ Đơn hàng bán sỉ (đối với là khách hàng doanh nghiệp)
+
+* Đối tượng khách hàng gồm:
+	- Mã khách hàng
+	- Tên 
+	- Địa chỉ
+	- Số điện thoại
+	- Được chia làm 2 loại:
+		+ Khách hàng cá nhân
+		+ Khách hàng doanh nghiệp: có thêm thông tin về mã số thuế
+
+* Sản phẩm gồm:
+	- Mã sản phẩm
+	- Tên sản phẩm
+	- Đơn giá
+	- Nơi sản xuất
+	- Được chia làm 2 loại:
+		+ Thức ăn: có thêm thông tin về khối lượng tịnh
+		+ Đồ uống: có thêm thông tin về dung tích, được chia làm 2 loại:
+			i. Nước giải khát
+			ii. Rượu: có thêm thông tin về nồng độ cồn
+
+* Cách tính giá cho các đơn hàng:
+	Đơn hàng bán lẻ = tổng giá của tất cả các sản phẩm tương ứng với số lượng đặt
+	Đơn hàng bán sỉ = 0.85 * tổng giá của tất cả các sản phẩm tương ứng với số lượng đặt
+
+Viết chương trình:
+	- Nhập và Xuất danh sách N đơn hàng
+	- [Option] Xuất thông tin tất cả các đơn hàng đã nhập để kiểm tra trước khi thực hiện thao tác lưu (sử dụng nạp chồng toán tử xuất “<<”)
+	- [Option] Lưu xuống file danh_sach_don_hang.txt sau khi người dùng hoàn thành thao tác kiểm tra ở bước 2 (nếu chưa có file thì tạo file mới)
+
+
+INPUT FORMAT:
+[số lượng đơn hàng]
+[loại đơn hàng (1 – Đơn bán lẻ, 2 – Đơn bán sỉ)]
+[mã đơn hàng]
+[ngày đặt hàng]
+[ngày giao hàng]
+[địa chỉ giao hàng]
+[mã khách hàng]
+[tên khách hàng]
+[địa chỉ]
+[số điện thoại]
+<mã số thuế (đối với đơn hàng bán sỉ)>
+[số lượng đơn hàng]
+[loại sản phẩm (1 – Đồ ăn, 2 – Thức uống)]
+<loại đồ uống (1 – NGK, 2 – Rượu) (nếu loại sản phẩm là Thức uống)>
+[mã sản phẩm]
+[tên sản phẩm]
+[giá tiền]
+[nơi sản xuất]
+<khối lượng tịnh (đối với Đồ ăn)>
+<dung tích (đối với Thức uống)>
+<Nồng độ cồn (đối với Rượu)>
+[số lượng đặt hàng]
+
+
+OUTPUT FORMAT:
+Đơn hàng: [mã đơn hàng] [loại đơn hàng] [giá đơn hàng] [ngày đặt hàng] [ngày giao hàng] [địa chỉ giao hàng]
+Khách hàng: [mã khách hàng] [loại khách hàng] [tên khách hàng] [địa chỉ] [số ĐT] <mã số thuế (đối với khách hàng doanh nghiệp)>
+Danh sách đặt hàng:
+	Sản phẩm 1: [mã sản phẩm] [loại sản phẩm] [tên sản phẩm] [nơi sản xuất][đơn giá 1 sản phẩm] <khối lượng tịnh (nếu là Đồ ăn)> <loại thức uống (nếu là Thức uống)> <dung tích (nếu là Thức uống)> <nồng độ cồn (Nếu là rượu)> [số lượng đặt hàng]
+	Sản phẩm 2: ...
